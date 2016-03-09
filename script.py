@@ -12,11 +12,12 @@ dset = f['signal_0/sig']
 print dset
 print dset.shape
 # print dset.type
-plt.plot(dset)
-plt.ylabel('Louis Gauche')
-plt.show()
 
 # frequence d'echantillonage en Hz
 freq = 250
-length_acquisition = dset.shape / (freq*60)  # in minutes
-print length_acquisition
+length_acquisition = dset.shape[0] / (freq*60)  # in minutes
+print "the acquisition is ", length_acquisition, " minutes long"
+
+plt.plot(dset)
+plt.ylabel('Louis Gauche')
+plt.show()
