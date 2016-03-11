@@ -35,10 +35,36 @@ def get_array(dataD, dataG, start_enr):
             'C3': np.array(dataG['signal_1/sig'][start:end]),
             'CZ': np.array(dataG['signal_2/sig'][start:end])
         }
-        features[i] =
     return(enr)
 
-def get_features
+playlist1 = {
+    'sung': [1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
+    'rythmic': [1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
+    'charles likes': [0, 0, 0, 0, 1, 0, 0, 1, 1, 0],
+    'louis likes': [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+    }
+playlist2 = {
+    'sung': [0, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+    'rythmic': [0, 1, 0, 1, 0, 1, 1, 1, 1, 1],
+    'charles likes': [1, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+    'louis likes': [1, 0, 1, 0, 1, 1, 1, 0, 0, 0]
+    }
+
+features1 = [None] * 10
+features2 = [None] * 10
+for i in range(10):
+    features1[i] = {
+        'sung': playlist1["sung"][i],
+        'rythmic': playlist1["rythmic"][i],
+        'charles likes': playlist1["charles likes"][i],
+        'louis likes': playlist1["louis likes"][i]
+        }
+    features2[i] = {
+        'sung': playlist2["sung"][i],
+        'rythmic': playlist2["rythmic"][i],
+        'charles likes': playlist2["charles likes"][i],
+        'louis likes': playlist2["louis likes"][i]
+    }
 
 enrL1 = get_array(h5dataLD, h5dataLG, START_L1)
 enrL2 = get_array(h5dataLD, h5dataLG, START_L2)
@@ -47,3 +73,5 @@ enrC2 = get_array(h5dataCD, h5dataCG, START_C2)
 
 print(len(enrC1[0]['CZ']))
 print(len(enrC1[9]['CZ']))
+
+print(features2)
