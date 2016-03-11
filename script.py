@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 from scipy.signal import filter_design, filtfilt
 
 
-f = h5py.File("data/Test_Louis_Test_Louis_gauche_04-mars2016.h5", "r")
+f = h5py.File("data/Test_Charles_droite_Test_Charles_droite_04-mars2016.h5", "r")
 
 for name in f:
     print(name)
 
-dset = f['signal_0/sig']
+dset = f['signal_1/sig']
 print(dset)
 print(dset.shape)
 # print dset.type
