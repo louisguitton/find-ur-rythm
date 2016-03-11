@@ -1,0 +1,92 @@
+[
+  {
+    "Order1": 9,
+    "Order2": 1,
+    "Song": "City Lies - Camera",
+    "Sung": 0,
+    "Rythmic": 0,
+    "Charles likes": 1,
+    "Louis likes": 1
+  },
+  {
+    "Order1": 8,
+    "Order2": 2,
+    "Song": "Symbolic & Avalon - Modern Age",
+    "Sung": 0,
+    "Rythmic": 1,
+    "Charles likes": 1,
+    "Louis likes": 0
+  },
+  {
+    "Order1": 6,
+    "Order2": 3,
+    "Song": "Isn't she lovely - Victor Wooten",
+    "Sung": 0,
+    "Rythmic": 0,
+    "Charles likes": 0,
+    "Louis likes": 1
+  },
+  {
+    "Order1": 7,
+    "Order2": 4,
+    "Song": "Stravinsky - glorification de l'elue",
+    "Sung": 0,
+    "Rythmic": 1,
+    "Charles likes": 0,
+    "Louis likes": 0
+  },
+  {
+    "Order1": 4,
+    "Order2": 5,
+    "Song": "Gorillaz (feat. Lou Reed) - Some Kind Of Nature",
+    "Sung": 1,
+    "Rythmic": 0,
+    "Charles likes": 0,
+    "Louis likes": 1
+  },
+  {
+    "Order1": 1,
+    "Order2": 6,
+    "Song": "Ma dope - Nekfeu",
+    "Sung": 1,
+    "Rythmic": 1,
+    "Charles likes": 0,
+    "Louis likes": 1
+  },
+  {
+    "Order1": 3,
+    "Order2": 7,
+    "Song": "Les sardines - Patrick Sebastien",
+    "Sung": 1,
+    "Rythmic": 1,
+    "Charles likes": 0,
+    "Louis likes": 1
+  },
+  {
+    "Order1": 5,
+    "Order2": 8,
+    "Song": "Above & Beyond - Alone Tonight",
+    "Sung": 1,
+    "Rythmic": 1,
+    "Charles likes": 1,
+    "Louis likes": 0
+  },
+  {
+    "Order1": 10,
+    "Order2": 9,
+    "Song": "Glaciation - le soleil et l'acier",
+    "Sung": 1,
+    "Rythmic": 1,
+    "Charles likes": 0,
+    "Louis likes": 0
+  },
+  {
+    "Order1": 2,
+    "Order2": 10,
+    "Song": "DISTRICT7 - NOISY BLOODSHED",
+    "Sung": 0,
+    "Rythmic": 1,
+    "Charles likes": 0,
+    "Louis likes": 0
+  }
+]

@@ -1,7 +1,6 @@
 import h5py
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.signal import filter_design, filtfilt
+import json
 
 FREQ = 250
 START_C1 = 21189
@@ -13,10 +12,14 @@ END_BUFFER = FREQ * 10
 BLINK_DELAY = FREQ * 10
 SAMPLE_LENGTH = FREQ * 120
 
+playlist_file = open("playlist.json", "r")
+playlist = json.load(playlist_file)
+
 h5dataCD = h5py.File("data/Test_Charles_droite_Test_Charles_droite_04-mars2016.h5", "r")
 h5dataCG = h5py.File("data/Test_Charles_gauche_Test_Charles_gauche_04-mars2016.h5", "r")
 h5dataLD = h5py.File("data/Test_Louis_droite_Test_Louis_droite_04-mars2016.h5", "r")
 h5dataLG = h5py.File("data/Test_Louis_Test_Louis_gauche_04-mars2016.h5", "r")
+
 
 def get_array(dataD, dataG, start_enr):
     enr = [None] * 10
@@ -32,7 +35,10 @@ def get_array(dataD, dataG, start_enr):
             'C3': np.array(dataG['signal_1/sig'][start:end]),
             'CZ': np.array(dataG['signal_2/sig'][start:end])
         }
+        features[i] =
     return(enr)
+
+def get_features
 
 enrL1 = get_array(h5dataLD, h5dataLG, START_L1)
 enrL2 = get_array(h5dataLD, h5dataLG, START_L2)
