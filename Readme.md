@@ -25,3 +25,6 @@ Start of music for Charles = 21189
 
 
 stanislas@rythm.co
+
+Filtrer de 0 à 50 Hz
+et ensuite virer les artefacts
