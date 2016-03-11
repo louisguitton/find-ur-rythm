@@ -22,3 +22,6 @@ signal_4 = RAS
 We manually find with script.py the beginning of the music in the data
 Start of music for Louis = 34532
 Start of music for Charles = 21189
+
+
+stanislas@rythm.co
