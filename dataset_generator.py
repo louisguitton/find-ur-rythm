@@ -21,22 +21,6 @@ h5dataLD = h5py.File("data/Test_Louis_droite_Test_Louis_droite_04-mars2016.h5", 
 h5dataLG = h5py.File("data/Test_Louis_Test_Louis_gauche_04-mars2016.h5", "r")
 
 
-def get_array(dataD, dataG, start_enr):
-    enr = [None] * 10
-    for i in range(10):
-        start = start_enr + SAMPLE_LENGTH * i + BLINK_DELAY + START_BUFFER
-        end = start_enr + SAMPLE_LENGTH * (i + 1) - END_BUFFER
-        enr[i] = {
-            'T8': np.array(dataD['signal_0/sig'][start:end]),
-            'C4': np.array(dataD['signal_1/sig'][start:end]),
-            'F4': np.array(dataD['signal_2/sig'][start:end]),
-            'E2': np.array(dataD['signal_3/sig'][start:end]),
-            'T7': np.array(dataG['signal_0/sig'][start:end]),
-            'C3': np.array(dataG['signal_1/sig'][start:end]),
-            'CZ': np.array(dataG['signal_2/sig'][start:end])
-        }
-    return(enr)
-
 playlist1 = {
     'sung': [1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
     'rythmic': [1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
@@ -66,12 +50,25 @@ for i in range(10):
         'louis likes': playlist2["louis likes"][i]
     }
 
+
+def get_array(dataD, dataG, start_enr):
+    enr = [None] * 10
+    for i in range(10):
+        start = start_enr + SAMPLE_LENGTH * i + BLINK_DELAY + START_BUFFER
+        end = start_enr + SAMPLE_LENGTH * (i + 1) - END_BUFFER
+        enr[i] = {
+            'T8': np.array(dataD['signal_0/sig'][start:end]),
+            'C4': np.array(dataD['signal_1/sig'][start:end]),
+            'F4': np.array(dataD['signal_2/sig'][start:end]),
+            'E2': np.array(dataD['signal_3/sig'][start:end]),
+            'T7': np.array(dataG['signal_0/sig'][start:end]),
+            'C3': np.array(dataG['signal_1/sig'][start:end]),
+            'CZ': np.array(dataG['signal_2/sig'][start:end])
+        }
+    return(enr)
+
+
 enrL1 = get_array(h5dataLD, h5dataLG, START_L1)
 enrL2 = get_array(h5dataLD, h5dataLG, START_L2)
 enrC1 = get_array(h5dataCD, h5dataCG, START_C1)
 enrC2 = get_array(h5dataCD, h5dataCG, START_C2)
-
-print(len(enrC1[0]['CZ']))
-print(len(enrC1[9]['CZ']))
-
-print(features2)
