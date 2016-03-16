@@ -18,7 +18,7 @@ def get_spectral_intensities(data, ranges=FREQ_RANGES):
     spectral_data = spectrum.pmtm(data, 2.5, show=False)
     l = len(data)
     for [min, max] in ranges:
-        intensities.extend(sum(spectral_data[int(min * l / FREQ):int(max * l / FREQ)]))
+        intensities.extend(sum(spectral_data[int(min * l / FREQ):int(max * l / FREQ)])/(max-min))
     return intensities
 
 
@@ -28,82 +28,76 @@ def get_all_spectral_intensities(sample, ranges=FREQ_RANGES, signals=SIGNALS_TO_
         intensities.extend(get_spectral_intensities(sample[signal], ranges))
     return(intensities)
 
-plt.figure("L2['F4']")
+plt.figure("C1['T8']")
 width = 1
-# Sung
+# Rythmic
 plt.subplot(521)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[0]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[5]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[8]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
-plt.ylabel("Nekfeu")
+plt.ylabel("City Lies")
+
 
 plt.subplot(523)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[2]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[6]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[5]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
-plt.ylabel("Patrick Sebastien")
+plt.ylabel("Victor Wooten")
+
 
 plt.subplot(525)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[3]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[4]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[3]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("Gorillaz")
 
 plt.subplot(527)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[4]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[7]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[4]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("Above n Beyond")
 
 plt.subplot(529)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[9]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[8]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[9]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("Glaciation")
 
 # Instru
 plt.subplot(522)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[1]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[9]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[1]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("District7")
 
 plt.subplot(524)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[5]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[2]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[2]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
-plt.ylabel("Victor Wooten")
+plt.ylabel("Patrick Sebastien")
+
 
 plt.subplot(526)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[6]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[3]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[6]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("Stravinsky")
 
 plt.subplot(528)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[7]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[1]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[7]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
 plt.ylabel("Symbolic n Avalon")
 
 plt.subplot(520)
-# plt.bar(np.arange(6), get_spectral_intensities(enrL2[8]["F4"]))
-plt.bar(np.arange(6), get_spectral_intensities(enrL2[0]["F4"]))
+plt.bar(np.arange(6), get_spectral_intensities(enrC1[0]["T8"]))
 plt.xticks(np.arange(6) + width/2., labels)
 plt.yscale('log')
-plt.ylabel("City Lies")
+plt.ylabel("Nekfeu")
+
 
 plt.show()
-# plt.savefig("L2.png")
+# plt.savefig("C1.png")
 
 
 
@@ -113,7 +107,7 @@ plt.show()
 # for i in range(10):
 #     if features1[i]["sung"] == 1:
 #         print(i)
-#         # prefrontal_sung = np.concatenate((prefrontal_sung, enrL1[i]["F4"]), axis=0)
+#         # prefrontal_sung = np.concatenate((prefrontal_sung, enrL1[i]["T8"]), axis=0)
 #     else:
 #         print("lol", i)
 #         # prefrontal_instru = np.concatenate((prefrontal_instru, enrL1[i]["F4"]), axis=0)
