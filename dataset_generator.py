@@ -1,8 +1,6 @@
 import h5py
 import numpy as np
-# from numpy. import fft
 import json
-import numpy.fft
 
 FREQ = 256
 START_C1 = 21189

@@ -32,7 +32,8 @@ b, a = filter_design.iirfilter(3, (49. / nyquist, 51. / nyquist), rs=10,
 
 # filter the signal
 print("filtering ...")
-xfilt = filtfilt(b, a, dset)
+x50 = filtfilt(b, a, dset)
+xfilt = dset - x50
 
 plt.plot(xfilt, label='50Hz bandpass-filtered')
 plt.show()

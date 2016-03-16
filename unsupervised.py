@@ -4,28 +4,34 @@ import matplotlib.pyplot as plt
 from scipy.fftpack import fft
 import numpy as np
 
-prefrontal_sung = np.array([])
-prefrontal_instru = np.array([])
-for i in range(10):
-    if features1[i]["sung"] == 1:
-        print(i)
-        # prefrontal_sung = np.concatenate((prefrontal_sung, enrL1[i]["F4"]), axis=0)
-    else:
-        print("lol", i)
-        # prefrontal_instru = np.concatenate((prefrontal_instru, enrL1[i]["F4"]), axis=0)
-
-
+# prefrontal_sung = np.array([])
+# prefrontal_instru = np.array([])
+# for i in range(10):
+#     if features1[i]["sung"] == 1:
+#         print(i)
+#         # prefrontal_sung = np.concatenate((prefrontal_sung, enrL1[i]["F4"]), axis=0)
+#     else:
+#         print("lol", i)
+#         # prefrontal_instru = np.concatenate((prefrontal_instru, enrL1[i]["F4"]), axis=0)
 # prefrontal_sung = abs(fft(prefrontal_sung))
 # prefrontal_instru = abs(fft(prefrontal_instru))
+
+
 def ffty(y):
+    # len(y)=T*N
+    # de 0 a 40 Hz
+    fmax = 40.0
+    T = 1.0 / (2.0 * fmax)
     # Number of samplepoints
-    N = 600
-    # sample spacing
-    T = 1.0 / 800.0
-    x = np.linspace(0.0, N*T, N)
+    N = len(y)/T
+    print("N ", N)
     yf = fft(y)
+    print(len(yf))
     xf = np.linspace(0.0, 1.0/(2.0*T), N/2)
-    plt.plot(xf, 2.0/N * np.abs(yf[:N/2]))
+    print(len(xf))
+    plt.plot(xf, 2.0/N * np.abs(yf[0:N/2]))
+    plt.grid()
+    plt.show()
 
 
 plt.figure(1)
