@@ -89,7 +89,7 @@ def print_accuracies(feature, classifier, learning_share):
     if feature != "louis likes":
         print("    Charles #1:       {:.0f}%".format(100 * get_accuracy_one_set(classifier, feature, datasetC1, learning_share)))
         print("    Charles #2:       {:.0f}%".format(100 * get_accuracy_one_set(classifier, feature, datasetC2, learning_share)))
-    print("  From one taping to another")
+    print("  From one taping to another:")
     if feature != "charles likes":
         print("    Louis #1 to #2:   {:.0f}%".format(100 * get_accuracy(classifier, feature, datasetL1, datasetL2)))
         print("    Louis #2 to #1:   {:.0f}%".format(100 * get_accuracy(classifier, feature, datasetL2, datasetL1)))
@@ -137,3 +137,4 @@ while True:
     shuffle_dataset(datasetL)
     shuffle_dataset(datasetC)
     print_accuracies(feature, classifier, learning_share)
+    print()
